@@ -3,6 +3,7 @@ import { Sequelize } from 'sequelize-typescript';
 import { SEQUELIZE } from '../constants';
 import databaseConfig from '../../configs/sequelize.config';
 import { Products } from 'src/products/products.entity';
+import { CreditCard } from 'src/creditcard/creditcard.entity';
 
 export const databaseProviders = [
   {
@@ -23,7 +24,7 @@ export const databaseProviders = [
       try {
         const sequelize = new Sequelize(config);
         sequelize.authenticate();
-        sequelize.addModels([Products]);
+        sequelize.addModels([Products, CreditCard]);
         await sequelize.sync();
         console.log('Database connected successfully!');
         return sequelize;

@@ -9,6 +9,7 @@ import { WinstonModule } from 'nest-winston';
 import { winstonConfig } from './configs/winston.config';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './core/database/database.module';
+import { CreditCardModule } from './creditcard/creditcard.module';
 @Module({
   imports: [
     WinstonModule.forRoot(winstonConfig),
@@ -16,6 +17,7 @@ import { DatabaseModule } from './core/database/database.module';
     DatabaseModule,
     TerminusModule,
     ProductsModule,
+    CreditCardModule,
   ],
   controllers: [HealthController],
   providers: [

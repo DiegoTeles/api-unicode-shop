@@ -43,6 +43,8 @@
     "@typescript-eslint/parser": "^6.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "creditcard.js": "^3.0.31",
+    "date-fns": "^2.30.0",
     "dotenv": "^16.3.1",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^9.0.0",

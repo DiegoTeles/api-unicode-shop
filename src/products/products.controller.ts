@@ -23,7 +23,7 @@ export class ProductsController {
     const products = await this.productsService.createProduct(createProductDto);
     return {
       products,
-      message: 'Curso cadastrado com sucesso',
+      message: 'Produto cadastrado com sucesso',
     };
   }
 
