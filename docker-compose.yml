@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+  api:
+    container_name: api-store
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: development
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL_DEV: postgresql://${DB_USER_DEV}:${DB_PASS_DEV}@localhost:5432/${DB_NAME_DEV}?schema=public
+    volumes:
+      - .:/usr/src/app
+    command: npm run start:dev
+    ports:
+      - 3001:3001
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_DB: meu_banco_de_dados
+      POSTGRES_USER: meu_usuario
+      POSTGRES_PASSWORD: minha_senha
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: pgadmin4
+    image: "dpage/pgadmin4:6.10"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@mail.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+      - ./docker_pgadmin_servers.json:/pgadmin4/servers.json
+    ports:
+      - "5433:80"
+    entrypoint:
+      - "/bin/sh"
+      - "-c"
+      - "/bin/echo 'postgres:5432:*:postgres:password' > /tmp/pgpassfile && chmod 600 /tmp/pgpassfile && /entrypoint.sh"
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  pgadmin:
+
+networks:
+  my_network:
