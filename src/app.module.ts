@@ -12,6 +12,7 @@ import { DatabaseModule } from './core/database/database.module';
 import { CreditCardModule } from './creditcard/creditcard.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { StripeModule } from './stripe/stripe.module';
 @Module({
   imports: [
     WinstonModule.forRoot(winstonConfig),
@@ -22,6 +23,7 @@ import { UsersModule } from './users/users.module';
     CreditCardModule,
     AuthModule,
     UsersModule,
+    StripeModule,
   ],
   controllers: [HealthController],
   providers: [
