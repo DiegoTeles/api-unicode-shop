@@ -1,73 +1,83 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Projeto Backend em NestJS
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Este é um projeto backend em NestJS que utiliza várias bibliotecas para facilitar o desenvolvimento de aplicativos web e API. Abaixo, descrevo as bibliotecas usadas e explico por que elas são úteis para este projeto.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Bibliotecas Utilizadas
 
-## Description
+1. **pg (PostgreSQL):** O PostgreSQL é um sistema de gerenciamento de banco de dados relacional altamente confiável. Ele é amplamente utilizado para armazenar dados em aplicativos web e oferece recursos avançados de consulta e segurança.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+2. **creditcard.js:** Esta biblioteca oferece funcionalidades para validar e gerar números de cartão de crédito. É útil ao lidar com transações financeiras em seu aplicativo.
 
-## Installation
+3. **Swagger:** O Swagger é uma estrutura de código aberto que permite a documentação e geração de APIs de forma automática. Facilita a documentação da API e a visualização interativa das rotas.
 
-```bash
-$ npm install
-```
+4. **bcrypt:** O bcrypt é uma biblioteca usada para a criptografia de senhas. Ela ajuda a armazenar senhas com segurança no banco de dados, evitando que elas sejam armazenadas em texto simples.
 
-## Running the app
+5. **passport-jwt:** O Passport é um middleware de autenticação amplamente utilizado em Node.js. O passport-jwt é uma estratégia que permite autenticar solicitações com base em tokens JWT (JSON Web Tokens).
 
-```bash
-# development
-$ npm run start
+6. **date-fns:** O date-fns é uma biblioteca de manipulação de datas em JavaScript que facilita a formatação, cálculos e manipulação de datas.
 
-# watch mode
-$ npm run start:dev
+7. **winston:** O Winston é um logger para Node.js que permite a gravação de logs de aplicativos. É útil para rastrear erros e eventos importantes em seu aplicativo.
 
-# production mode
-$ npm run start:prod
-```
+8. **sequelize-typescript:** O Sequelize é um ORM (Object-Relational Mapping) para bancos de dados SQL. O sequelize-typescript é uma extensão do Sequelize que adiciona suporte a tipos TypeScript.
 
-## Test
+9. **class-validator:** O class-validator é uma biblioteca que permite a validação de objetos em TypeScript/JavaScript. É útil para validar dados de entrada antes de processá-los.
+
+10. **class-transformer:** O class-transformer é usado em conjunto com o class-validator para transformar objetos em diferentes formatos. Pode ser útil ao manipular dados antes de enviá-los como resposta em uma API.
+
+## Como Começar
+
+Para começar a usar este projeto, siga estas etapas:
+
+1. Uso do Docker e Kubernetes
+
+Para facilitar a implantação e escalabilidade de seu aplicativo, recomendo o uso do Docker e Kubernetes para subir a PI e o banco de dados. 
+
+Aqui estão os passos básicos para implantação em um cluster Kubernetes usando contêineres Docker:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+docker compose up
 ```
 
-## Support
+### ou
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+1. Clone o repositório em sua máquina local:
 
-## Stay in touch
+   ```bash
+   git clone https://seu-repositorio.git
+   ```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+2. Instale as dependências do projeto:
 
-## License
+   ```bash
+   npm install
+   ```
 
-Nest is [MIT licensed](LICENSE).
+3. Configure o banco de dados PostgreSQL e atualize as informações de conexão no arquivo `.env`.
+
+4. Inicie o servidor NestJS:
+
+   ```bash
+   npm run start
+   ```
+
+Agora você pode começar a desenvolver seu aplicativo web ou API usando as bibliotecas mencionadas. Certifique-se de explorar a documentação de cada biblioteca para entender melhor como usá-las em seu projeto.
+
+## Documentação
+
+- Documentação do NestJS: [Link da Documentação](https://nestjs.com/)
+- Documentação do Swagger: [Link da Documentação](https://swagger.io/)
+- Documentação do bcrypt: [Link da Documentação](https://www.npmjs.com/package/bcrypt)
+- Documentação do passport-jwt: [Link da Documentação](http://www.passportjs.org/packages/passport-jwt/)
+- Documentação do date-fns: [Link da Documentação](https://date-fns.org/)
+- Documentação do Winston: [Link da Documentação](https://github.com/winstonjs/winston)
+- Documentação do Sequelize: [Link da Documentação](https://sequelize.org/)
+- Documentação do class-validator: [Link da Documentação](https://github.com/typestack/class-validator)
+- Documentação do class-transformer: [Link da Documentação](https://github.com/typestack/class-transformer)
+
+## Contribuição
+
+Se você deseja contribuir para este projeto, fique à vontade para abrir problemas (issues) ou enviar solicitações de pull (pull requests). Sua ajuda é bem-vinda!
+
+## Licença
+
+Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para obter mais detalhes.
