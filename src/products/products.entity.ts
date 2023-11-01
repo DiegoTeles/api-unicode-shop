@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import {
   Table,
   Column,
@@ -23,18 +24,21 @@ export class Products extends Model<ProductsAttributes> {
   @Column(DataType.INTEGER)
   id?: bigint;
 
+  @ApiProperty()
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
   title: string;
 
+  @ApiProperty()
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
   description: string;
 
+  @ApiProperty()
   @Column({
     type: DataType.INTEGER,
     allowNull: false,

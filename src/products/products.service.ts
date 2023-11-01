@@ -22,7 +22,13 @@ export class ProductsService implements IProductsService {
     await this.productRepository.create(createProductDto);
   }
 
-  async findProducts(queryDto: any): Promise<any> {
+  async findProducts(queryDto: { page?: number; limit?: number }): Promise<{
+    totalCount: number;
+    totalPages: number;
+    page: number;
+    limit: number;
+    data: any[];
+  }> {
     const offset = queryDto.page === undefined ? 0 : queryDto.page;
     const limit = queryDto.limit === undefined ? 15 : queryDto.limit;
 

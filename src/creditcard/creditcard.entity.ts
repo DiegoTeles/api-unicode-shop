@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import {
   Table,
   Column,
@@ -24,24 +25,28 @@ export class CreditCard extends Model<CreditCardAttributes> {
   @Column(DataType.INTEGER)
   id?: bigint;
 
+  @ApiProperty()
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
   exp_date: string;
 
+  @ApiProperty()
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
   holder: string;
 
+  @ApiProperty()
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
   number: string;
 
+  @ApiProperty()
   @Column({
     type: DataType.STRING(4),
     allowNull: false,
