@@ -1,24 +1,6 @@
 version: '3'
 
 services:
-  api:
-    container_name: api-store
-    build:
-      dockerfile: Dockerfile
-      context: .
-      target: development
-    env_file:
-      - .env
-    environment:
-      DATABASE_URL_DEV: postgresql://${DB_USER_DEV}:${DB_PASS_DEV}@localhost:5432/${DB_NAME_DEV}?schema=public
-    volumes:
-      - .:/usr/src/app
-    command: npm run start:dev
-    ports:
-      - 3001:3001
-    depends_on:
-      - postgres
-
   postgres:
     image: postgres:latest
     container_name: postgres

@@ -2,6 +2,42 @@
 
 Este é um projeto backend em NestJS que utiliza várias bibliotecas para facilitar o desenvolvimento de aplicativos web e API. Abaixo, descrevo as bibliotecas usadas e explico por que elas são úteis para este projeto.
 
+## Como Começar
+
+Para começar a usar este projeto, siga estas etapas:
+
+1. Clone o repositório em sua máquina local:
+
+   ```bash
+   git clone git@github.com:DiegoTeles/api-unicode-shop.git
+   ```
+
+2. Inicie o container
+   ```bash
+   docker compose up
+   ```
+
+3. Instale a dependênciado NestJS Globalmente:
+
+   ```bash
+   npm i -g @nestjs/cli
+   ```
+
+4. Instale as dependências do projeto:
+
+   ```bash
+   npm install
+   ```
+
+5. Configure o banco de dados PostgreSQL e atualize as informações de conexão no arquivo `.env`. (se preferir já esta configurado)
+
+
+6. Inicie o servidor NestJS:
+
+   ```bash
+   npm run start
+   ```
+
 ## Bibliotecas Utilizadas
 
 1. **pg (PostgreSQL):** O PostgreSQL é um sistema de gerenciamento de banco de dados relacional altamente confiável. Ele é amplamente utilizado para armazenar dados em aplicativos web e oferece recursos avançados de consulta e segurança.
@@ -23,48 +59,6 @@ Este é um projeto backend em NestJS que utiliza várias bibliotecas para facili
 9. **class-validator:** O class-validator é uma biblioteca que permite a validação de objetos em TypeScript/JavaScript. É útil para validar dados de entrada antes de processá-los.
 
 10. **class-transformer:** O class-transformer é usado em conjunto com o class-validator para transformar objetos em diferentes formatos. Pode ser útil ao manipular dados antes de enviá-los como resposta em uma API.
-
-## Como Começar
-
-Para começar a usar este projeto, siga estas etapas:
-
-1. Uso do Docker e Kubernetes
-
-Para facilitar a implantação e escalabilidade de seu aplicativo, recomendo o uso do Docker e Kubernetes para subir a PI e o banco de dados. 
-
-Aqui estão os passos básicos para implantação em um cluster Kubernetes usando contêineres Docker:
-
-Instale o Nest Globalmente
-
-```bash
-npm i -g @nestjs/cli
-```
-
-```bash
-docker compose up
-```
-
-### ou
-
-1. Clone o repositório em sua máquina local:
-
-   ```bash
-   git clone https://seu-repositorio.git
-   ```
-
-2. Instale as dependências do projeto e o NestJS:
-
-   ```bash
-   npm i -g @nestjs/cli && npm install
-   ```
-
-3. Configure o banco de dados PostgreSQL e atualize as informações de conexão no arquivo `.env`.
-
-4. Inicie o servidor NestJS:
-
-   ```bash
-   npm run start
-   ```
 
 Agora você pode começar a desenvolver seu aplicativo web ou API usando as bibliotecas mencionadas. Certifique-se de explorar a documentação de cada biblioteca para entender melhor como usá-las em seu projeto.
 
