@@ -34,6 +34,12 @@ Para facilitar a implantação e escalabilidade de seu aplicativo, recomendo o u
 
 Aqui estão os passos básicos para implantação em um cluster Kubernetes usando contêineres Docker:
 
+Instale o Nest Globalmente
+
+```bash
+npm i -g @nestjs/cli
+```
+
 ```bash
 docker compose up
 ```
