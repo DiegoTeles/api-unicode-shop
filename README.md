@@ -46,10 +46,10 @@ docker compose up
    git clone https://seu-repositorio.git
    ```
 
-2. Instale as dependências do projeto:
+2. Instale as dependências do projeto e o NestJS:
 
    ```bash
-   npm install
+   npm i -g @nestjs/cli && npm install
    ```
 
 3. Configure o banco de dados PostgreSQL e atualize as informações de conexão no arquivo `.env`.
